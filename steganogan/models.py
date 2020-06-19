@@ -72,9 +72,9 @@ class SteganoGAN(object):
 
     def __init__(self, data_depth, encoder, decoder, critic,
                  cuda=False, verbose=False, log_dir=None, **kwargs):
-
+        # 设为true则控制台会输出更多信息
         self.verbose = verbose
-
+        # 需要将data表示成几层
         self.data_depth = data_depth
         kwargs['data_depth'] = data_depth
         self.encoder = self._get_instance(encoder, kwargs)
@@ -289,7 +289,7 @@ class SteganoGAN(object):
         """Encode an image.
         Args:
             cover (str): Path to the image to be used as cover.
-            output (str): Path where the generated image will be saved.
+            output (str): Path where the generated image will be saved.SteganoGAN只对空域有效，输出必须是PNG图像
             text (str): Message to hide inside the image.
         """
         cover = imread(cover, pilmode='RGB') / 127.5 - 1.0

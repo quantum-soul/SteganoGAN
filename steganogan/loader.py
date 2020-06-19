@@ -27,7 +27,7 @@ class ImageFolder(torchvision.datasets.ImageFolder):
 
 
 class DataLoader(torch.utils.data.DataLoader):
-
+    # np.inf表示无穷大，即所有图片都会被使用
     def __init__(self, path, transform=None, limit=np.inf, shuffle=True,
                  num_workers=8, batch_size=4, *args, **kwargs):
 
