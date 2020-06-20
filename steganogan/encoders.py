@@ -46,7 +46,7 @@ class BasicEncoder(nn.Module):
         super().__init__()
         self.version = '1'
         self.data_depth = data_depth
-        self.hidden_size = hidden_size
+        self.hidden_size = hidden_size  # 隐藏层使用的通道数量
         self._models = self._build_models()
 
     def upgrade_legacy(self):
